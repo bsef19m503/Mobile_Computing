@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 public class LessonActivity extends AppCompatActivity {
 
+    private String alphabet;
+    private TextView heading;
+
     private int[] imageViews;
     private ImageView imageView;
     private int[] textViews;
@@ -40,7 +43,10 @@ public class LessonActivity extends AppCompatActivity {
         };
 
         if(getIntent() != null && getIntent().hasExtra("alphabet")) {
-            index = getIntent().getStringExtra("alphabet").charAt(0) - 65;
+            alphabet = getIntent().getStringExtra("alphabet");
+            heading = findViewById(R.id.textView);
+            heading.setText(alphabet);
+            index = alphabet.charAt(0) - 65;
             for(int i=0;i<4;i++) {
                imageView = findViewById(imageViews[i]);
                imageView.setImageResource(images[index][i]);

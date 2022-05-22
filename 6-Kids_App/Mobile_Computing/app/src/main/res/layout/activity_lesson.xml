@@ -14,7 +14,6 @@
         android:layout_gravity="center"
         android:paddingTop="20sp"
         android:paddingBottom="70sp"
-        android:text="A"
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold" />
