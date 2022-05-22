@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".QuizActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="50sp"
+                android:text="Quiz"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!-- Question-1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginBottom="20sp"
+
+                >
+
+                <TextView
+                    android:id="@+id/question1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q1: The name of the following object starts with:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10sp"
+                    android:paddingHorizontal="15sp"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_height="50dp"
+                    android:layout_width="50sp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/a1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="15sp" >
+
+                    <RadioGroup
+                        android:id="@+id/answer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/q1_option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A" />
+
+                        <RadioButton
+                            android:id="@+id/q1_option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="B" />
+
+                        <RadioButton
+                            android:id="@+id/q1_option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="C" />
+
+                        <RadioButton
+                            android:id="@+id/q1_option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="D" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Question-2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q2: The name of the following object starts with:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10sp"
+                    android:paddingHorizontal="15sp"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_height="50dp"
+                    android:layout_width="50sp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/a1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="15sp" >
+
+                    <RadioGroup
+                        android:id="@+id/answer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/q2_option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A" />
+
+                        <RadioButton
+                            android:id="@+id/q2_option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="B" />
+
+                        <RadioButton
+                            android:id="@+id/q2_option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="C" />
+
+                        <RadioButton
+                            android:id="@+id/q2_option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="D" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Question-3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q3: The name of the following object starts with:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10sp"
+                    android:paddingHorizontal="15sp"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_height="50dp"
+                    android:layout_width="50sp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/a1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="15sp" >
+
+                    <RadioGroup
+                        android:id="@+id/answer3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/q3_option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A" />
+
+                        <RadioButton
+                            android:id="@+id/q3_option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="B" />
+
+                        <RadioButton
+                            android:id="@+id/q3_option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="C" />
+
+                        <RadioButton
+                            android:id="@+id/q3_option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="D" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Question-4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q4: The name of the following object starts with:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10sp"
+                    android:paddingHorizontal="15sp"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image4"
+                    android:layout_height="50dp"
+                    android:layout_width="50sp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/a1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="15sp" >
+
+                    <RadioGroup
+                        android:id="@+id/answer4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/q4_option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A" />
+
+                        <RadioButton
+                            android:id="@+id/q4_option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="B" />
+
+                        <RadioButton
+                            android:id="@+id/q4_option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="C" />
+
+                        <RadioButton
+                            android:id="@+id/q4_option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="D" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Question-5 -->
+            <LinearLayout
+                android:id="@+id/answer5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q5: The name of the following object starts with:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10sp"
+                    android:paddingHorizontal="15sp"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image5"
+                    android:layout_height="50dp"
+                    android:layout_width="50sp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/a1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="15sp" >
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/q5_option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="A" />
+
+                        <RadioButton
+                            android:id="@+id/q5_option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="B" />
+
+                        <RadioButton
+                            android:id="@+id/q5_option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="C" />
+
+                        <RadioButton
+                            android:id="@+id/q5_option4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="D" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUBMIT"
+                android:textAlignment="center"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:onClick="gradeQuiz"
+
+                android:layout_gravity="center"
+                android:paddingHorizontal="50sp"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="50sp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+
+

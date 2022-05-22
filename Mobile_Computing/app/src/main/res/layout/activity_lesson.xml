@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LessonActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="20sp"
+        android:paddingBottom="70sp"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10sp"
+        android:paddingHorizontal="15sp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_height="100sp"
+            android:layout_width="100sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/a1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_height="100sp"
+            android:layout_width="100sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/a2" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="40sp"
+        android:paddingHorizontal="15sp"
+        >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:text="Apple"
+            android:textColor="#0B0909"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:text="Airplane"
+            android:textColor="#0B0909"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10sp"
+        android:paddingHorizontal="15sp" >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_height="100sp"
+            android:layout_width="100sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/a3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_height="100sp"
+            android:layout_width="100sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/a4" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20sp"
+        android:paddingHorizontal="15sp"
+        >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:text="Alligator"
+            android:textColor="#0B0909"
+            />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:text="Ant"
+            android:textColor="#0B0909"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
