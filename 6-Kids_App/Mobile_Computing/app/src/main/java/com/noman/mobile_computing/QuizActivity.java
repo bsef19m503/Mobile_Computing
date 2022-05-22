@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -19,6 +20,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView scoreBox;
     private TextView[] questions;
     private String[] questionsTexts;
+    private Button submitBtn;
     private RadioButton selectedButton;
     private RadioButton rightButton;
     private RadioButton radioButton;
@@ -120,8 +122,9 @@ public class QuizActivity extends AppCompatActivity {
 //                }
             }
             scoreBox = findViewById(R.id.scoreBox);
-            scoreBox.setText("Your final score: " + Integer.toString(score));
-            Toast.makeText(this, "Your score: " + Integer.toString(score), Toast.LENGTH_SHORT).show();
+            scoreBox.setText("Your Score: " + Integer.toString(score));
+            submitBtn = findViewById(R.id.submitBtn);
+            submitBtn.setEnabled(false);
             }
 
 }

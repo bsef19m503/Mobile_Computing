@@ -377,6 +377,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/submitBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SUBMIT"
@@ -396,12 +397,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:onClick="gradeQuiz"
 
                 android:layout_gravity="center"
-                android:paddingHorizontal="90sp"
                 android:layout_marginTop="50sp"
                 android:layout_marginBottom="100sp"
                 />
