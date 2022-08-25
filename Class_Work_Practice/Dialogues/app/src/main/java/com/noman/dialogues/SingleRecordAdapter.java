@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,6 +61,7 @@ public class SingleRecordAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Update", Toast.LENGTH_SHORT).show();
+                updateDialog(i);
 
             }
         });
@@ -101,20 +103,27 @@ public class SingleRecordAdapter extends BaseAdapter {
 
     private void updateDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivityContext);
-        builder.setTitle("Confirm");
-        builder.setMessage("Are you sure you want to delete this?");
+        builder.setTitle("Update");
 
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        View view = inflater.inflate(R.layout.activity_custom_dialog, null);
+        EditText idInput = view.findViewById(R.id.idInput);
+        EditText nameInput = view.findViewById(R.id.nameInput);
+        idInput.setText(studentIDs.get(index));
+        nameInput.setText(studentNames.get(index));
+
+        builder.setView(view);
+
+        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                studentNames.remove(index);
-                studentIDs.remove(index);
+                studentIDs.set(index, idInput.getText().toString());
+                studentNames.set(index, nameInput.getText().toString());
                 notifyDataSetChanged();
                 dialogInterface.dismiss();
             }
         });
 
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();

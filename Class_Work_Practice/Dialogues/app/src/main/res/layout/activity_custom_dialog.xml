@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        tools:ignore="MissingConstraints">
+
+    <EditText
+        android:id="@+id/idInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="14"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="14"
+        android:padding="10dp"
+
+        tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+
+
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        -->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Name"-->
+<!--        tools:layout_editor_absoluteX="100dp"-->
+<!--        tools:layout_editor_absoluteY="76dp" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
