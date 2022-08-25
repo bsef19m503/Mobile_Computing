@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/dayPic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/calender"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/dayView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:text="Sunday"
+        app:layout_constraintStart_toEndOf="@id/dayPic"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
