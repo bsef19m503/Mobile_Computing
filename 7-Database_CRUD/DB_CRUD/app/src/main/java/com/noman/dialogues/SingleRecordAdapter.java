@@ -19,21 +19,25 @@ import java.util.ArrayList;
 public class SingleRecordAdapter extends BaseAdapter {
     Context MainActivityContext;
     Context context;
-    ArrayList<String> studentIDs;
-    ArrayList<String> studentNames;
+//    ArrayList<String> studentIDs;
+//    ArrayList<String> studentNames;
+    ArrayList<StudentModel> studentsList;
+    DatabaseHelper databaseHelper;
     LayoutInflater inflater;
 
-    public SingleRecordAdapter(Context applicationContext, Context MainActivityContext, ArrayList<String> studentNames, ArrayList<String> studentIDs) {
+    public SingleRecordAdapter(Context applicationContext, Context MainActivityContext, ArrayList<String> studentNames, ArrayList<String> studentIDs, ArrayList<StudentModel> studentsList) {
         this.context = applicationContext;
-        this.studentIDs = studentIDs;
-        this.studentNames = studentNames;
+//        this.studentIDs = studentIDs;
+//        this.studentNames = studentNames;
+        this.studentsList = studentsList;
+        databaseHelper = new DatabaseHelper(MainActivityContext);
         inflater = (LayoutInflater.from(applicationContext));
         this.MainActivityContext = MainActivityContext;
     }
 
     @Override
     public int getCount() {
-        return studentIDs.size();
+        return studentsList.size();
     }
 
     @Override
@@ -55,8 +59,10 @@ public class SingleRecordAdapter extends BaseAdapter {
         ImageButton updateBtn = view.findViewById(R.id.updateBtn);
         ImageButton deleteBtn = view.findViewById(R.id.deleteBtn);
 
-        name.setText(studentNames.get(i));
-        id.setText(studentIDs.get(i));
+//        name.setText(studentNames.get(i));
+        name.setText(studentsList.get(i).getName());
+//        id.setText(studentIDs.get(i));
+        id.setText(studentsList.get(i).getReg_no());
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,8 +89,8 @@ public class SingleRecordAdapter extends BaseAdapter {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                studentNames.remove(index);
-                studentIDs.remove(index);
+//                studentNames.remove(index);
+//                studentIDs.remove(index);
                 notifyDataSetChanged();
                 dialogInterface.dismiss();
             }
@@ -101,6 +107,11 @@ public class SingleRecordAdapter extends BaseAdapter {
         alertDialog.show();
     }
 
+    public void refresh() {
+        studentsList = databaseHelper.getALLStudents();
+        notifyDataSetChanged();
+    }
+
     private void updateDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivityContext);
         builder.setTitle("Update");
@@ -108,16 +119,16 @@ public class SingleRecordAdapter extends BaseAdapter {
         View view = inflater.inflate(R.layout.activity_custom_dialog, null);
         EditText idInput = view.findViewById(R.id.idInput);
         EditText nameInput = view.findViewById(R.id.nameInput);
-        idInput.setText(studentIDs.get(index));
-        nameInput.setText(studentNames.get(index));
+//        idInput.setText(studentIDs.get(index));
+//        nameInput.setText(studentNames.get(index));
 
         builder.setView(view);
 
         builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                studentIDs.set(index, idInput.getText().toString());
-                studentNames.set(index, nameInput.getText().toString());
+//                studentIDs.set(index, idInput.getText().toString());
+//                studentNames.set(index, nameInput.getText().toString());
                 notifyDataSetChanged();
                 dialogInterface.dismiss();
             }

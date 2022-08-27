@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
     }
 
-    public void AddStudent(StudentModel studentModel) {
+    public void addStudent(StudentModel studentModel) {
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(reg_no, studentModel.getReg_no());
