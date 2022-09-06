@@ -31,5 +31,20 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return value;
     }
 
+    public ArrayList<ParaRecord> getParaAyat(int ParaID) {
+        String query = "SELECT * FROM tayah WHERE ParaID=" + ParaID + " ORDER BY AyaID";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        ArrayList<ParaRecord> AyatList = new ArrayList<>();
+        if(cursor.moveToFirst()) {
+            do {
+                ParaRecord paraRecord = new ParaRecord(cursor.getInt(10), cursor.getInt(0), cursor.getString(3), cursor.getString(4),  cursor.getString(6));
+                AyatList.add(paraRecord);
+            } while(cursor.moveToNext());
+        }
+        db.close();
+        return AyatList;
+    }
+
 }
 

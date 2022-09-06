@@ -2,6 +2,7 @@ package com.noman.al_quran;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,7 +29,10 @@ public class ReadByPara extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ReadByPara.this, "Clicked " + i + "th", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReadByPara.this, "Clicked " + (i+1) + "th", Toast.LENGTH_SHORT).show();
+                Intent intent =  new Intent(ReadByPara.this, ReadPara.class);
+                intent.putExtra("ParaID", i+1);
+                startActivity(intent);
             }
         });
 

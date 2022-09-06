@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlQuran">
         <activity
+            android:name=".ReadPara"
+            android:exported="false" />
+        <activity
             android:name=".ReadByPara"
             android:exported="false" />
         <activity

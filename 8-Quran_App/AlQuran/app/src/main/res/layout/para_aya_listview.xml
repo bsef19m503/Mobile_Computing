@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/para_aya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:fontFamily=""
+        android:paddingVertical="10dp"
+        android:textDirection="rtl"
+        android:paddingHorizontal="10dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
