@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_read_by_para"
+            android:title="Read by Para" />
+        <item
+            android:id="@+id/nav_read_by_surah"
+            android:title="Read by Surah" />
+        <item
+            android:id="@+id/nav_urdu_translation"
+            android:title="Urdu Translation" />
+        <item
+            android:id="@+id/nav_english_translation"
+            android:title="English Translation" />
+
+
+    </group>
+</menu>
