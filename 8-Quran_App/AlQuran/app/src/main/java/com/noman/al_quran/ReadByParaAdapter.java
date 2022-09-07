@@ -19,19 +19,23 @@ public class ReadByParaAdapter extends BaseAdapter {
     Context context;
     DatabaseHelper databaseHelper;
     LayoutInflater inflater;
-    int[] ParaList;
+    ArrayList<String> ParaList;
+    ArrayList<String> englishParahNames;
+    ArrayList<String> urduParahNames;
 
-    public ReadByParaAdapter(Context applicationContext, Context ReadByParaContext, int[] ParaList) {
+    public ReadByParaAdapter(Context applicationContext, Context ReadByParaContext, ArrayList<String> ParaList, ArrayList<String> englishParahNames, ArrayList<String> urduParahNames) {
         this.context = applicationContext;
         databaseHelper = new DatabaseHelper(ReadByParaContext);
         inflater = (LayoutInflater.from(applicationContext));
         this.ReadByParaContext = ReadByParaContext;
         this.ParaList = ParaList;
+        this.urduParahNames = urduParahNames;
+        this.englishParahNames = englishParahNames;
     }
 
     @Override
     public int getCount() {
-        return ParaList.length;
+        return ParaList.size();
     }
 
     @Override
@@ -48,8 +52,10 @@ public class ReadByParaAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.para_title_listview, null);
 
-        TextView title = view.findViewById(R.id.para_title);
-        title.setText("Para - " + ParaList[i]);
+        TextView title_urdu = view.findViewById(R.id.para_title_urdu);
+        TextView title_english = view.findViewById(R.id.para_title_english);
+        title_urdu.setText(urduParahNames.get(i));
+        title_english.setText(ParaList.get(i) + ".  " + englishParahNames.get(i));
 
         return view;
     }
