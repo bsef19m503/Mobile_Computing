@@ -4,23 +4,19 @@ public class ParaRecord {
     int ParaID;
     int AyaID;
     String ArabicText;
-    String UrduTranslation;
-    String EnglishTranslation;
+    String UrduTranslation1;
+    String UrduTranslation2;
+    String EnglishTranslation1;
+    String EnglishTranslation2;
 
-    public ParaRecord(int paraID, int ayaID, String arabicText, String urduTranslation, String englishTranslation) {
+    public ParaRecord(int paraID, int ayaID, String arabicText, String urduTranslation1, String urduTranslation2, String englishTranslation1, String englishTranslation2) {
         ParaID = paraID;
         AyaID = ayaID;
         ArabicText = arabicText;
-        UrduTranslation = urduTranslation;
-        EnglishTranslation = englishTranslation;
-    }
-
-    public ParaRecord() {
-        ParaID = -1;
-        AyaID = -1;
-        ArabicText = "";
-        UrduTranslation = "";
-        EnglishTranslation = "";
+        UrduTranslation1 = urduTranslation1;
+        UrduTranslation2 = urduTranslation2;
+        EnglishTranslation1 = englishTranslation1;
+        EnglishTranslation2 = englishTranslation2;
     }
 
     public int getParaID() {
@@ -47,19 +43,35 @@ public class ParaRecord {
         ArabicText = arabicText;
     }
 
-    public String getUrduTranslation() {
-        return UrduTranslation;
+    public String getUrduTranslation1() {
+        return UrduTranslation1;
     }
 
-    public void setUrduTranslation(String urduTranslation) {
-        UrduTranslation = urduTranslation;
+    public void setUrduTranslation1(String urduTranslation1) {
+        UrduTranslation1 = urduTranslation1;
     }
 
-    public String getEnglishTranslation() {
-        return EnglishTranslation;
+    public String getUrduTranslation2() {
+        return UrduTranslation2;
     }
 
-    public void setEnglishTranslation(String englishTranslation) {
-        EnglishTranslation = englishTranslation;
+    public void setUrduTranslation2(String urduTranslation2) {
+        UrduTranslation2 = urduTranslation2;
+    }
+
+    public String getEnglishTranslation1() {
+        return EnglishTranslation1;
+    }
+
+    public void setEnglishTranslation1(String englishTranslation1) {
+        EnglishTranslation1 = englishTranslation1;
+    }
+
+    public String getEnglishTranslation2() {
+        return EnglishTranslation2;
+    }
+
+    public void setEnglishTranslation2(String englishTranslation2) {
+        EnglishTranslation2 = englishTranslation2;
     }
 }

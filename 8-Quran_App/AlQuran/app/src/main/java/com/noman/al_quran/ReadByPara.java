@@ -30,7 +30,7 @@ public class ReadByPara extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(ReadByPara.this, "Clicked " + (i+1) + "th", Toast.LENGTH_SHORT).show();
-                Intent intent =  new Intent(ReadByPara.this, ReadPara.class);
+                Intent intent =  new Intent(ReadByPara.this, ParaTranslationOptions.class);
                 intent.putExtra("ParaID", i+1);
                 startActivity(intent);
             }

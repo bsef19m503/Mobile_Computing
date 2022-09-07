@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.Bidi;
 import java.util.ArrayList;
 
 public class ReadParaAdapter extends BaseAdapter {
@@ -15,13 +17,15 @@ public class ReadParaAdapter extends BaseAdapter {
     DatabaseHelper databaseHelper;
     LayoutInflater inflater;
     ArrayList<ParaRecord> AyatList;
+    String translation;
 
-    public ReadParaAdapter(Context applicationContext, Context ReadByParaContext, ArrayList<ParaRecord> AyatList) {
+    public ReadParaAdapter(Context applicationContext, Context ReadByParaContext, ArrayList<ParaRecord> AyatList, String translation) {
         this.context = applicationContext;
         databaseHelper = new DatabaseHelper(ReadByParaContext);
         inflater = (LayoutInflater.from(applicationContext));
         this.ReadByParaContext = ReadByParaContext;
         this.AyatList = AyatList;
+        this.translation = translation;
     }
 
     @Override
@@ -43,9 +47,22 @@ public class ReadParaAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.para_aya_listview, null);
 
-        TextView title = view.findViewById(R.id.para_aya);
-        title.setText(AyatList.get(i).getArabicText());
-
+        TextView aya = view.findViewById(R.id.para_aya);
+        aya.setText(AyatList.get(i).getArabicText());
+        TextView translation_type = view.findViewById(R.id.para_aya_translation);
+        if(translation.equals("urdu_translation_1") ) {
+            translation_type.setText(AyatList.get(i).getUrduTranslation1());
+        } else if(translation.equals("urdu_translation_2")) {
+            translation_type.setText(AyatList.get(i).getUrduTranslation2());
+        } else if(translation.equals("english_translation_1")) {
+            translation_type.setText(AyatList.get(i).getEnglishTranslation1());
+            translation_type.setTextDirection(Bidi.DIRECTION_DEFAULT_RIGHT_TO_LEFT);
+        } else if(translation.equals("english_translation_2")) {
+            translation_type.setText(AyatList.get(i).getEnglishTranslation2());
+            translation_type.setTextDirection(Bidi.DIRECTION_DEFAULT_RIGHT_TO_LEFT);
+        } else {
+            translation_type.setVisibility(View.GONE);
+        }
         return view;
     }
 

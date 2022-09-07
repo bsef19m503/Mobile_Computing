@@ -21,12 +21,13 @@ public class ReadPara extends AppCompatActivity {
 
         Intent intent = getIntent();
         int ParaID = intent.getIntExtra("ParaID", -1);
-
+        String translation = intent.getStringExtra("Translation");
+        Toast.makeText(this, translation, Toast.LENGTH_SHORT).show();
         databaseHelper = new DatabaseHelper(ReadPara.this);
         AyatList = databaseHelper.getParaAyat(ParaID);
 
         ListView listView = findViewById(R.id.paraAyatList_listview);
-        ReadParaAdapter readParaAdapter = new ReadParaAdapter(getApplicationContext(), ReadPara.this, AyatList);
+        ReadParaAdapter readParaAdapter = new ReadParaAdapter(getApplicationContext(), ReadPara.this, AyatList, translation);
 
         listView.setAdapter(readParaAdapter);
     }
