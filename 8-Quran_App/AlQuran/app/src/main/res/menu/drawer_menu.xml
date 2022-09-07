@@ -4,20 +4,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home" />
+            android:title="Home"
+            android:icon="@drawable/ic_baseline_home_24"/>
         <item
             android:id="@+id/nav_read_by_para"
-            android:title="Read by Para" />
+            android:title="Read by Para"
+            android:icon="@drawable/ic_baseline_menu_book_24"/>
         <item
             android:id="@+id/nav_read_by_surah"
-            android:title="Read by Surah" />
-        <item
-            android:id="@+id/nav_urdu_translation"
-            android:title="Urdu Translation" />
-        <item
-            android:id="@+id/nav_english_translation"
-            android:title="English Translation" />
+            android:title="Read by Surah"
+            android:icon="@drawable/ic_baseline_menu_book_24"/>
 
+        <item android:title="Recycler View">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_read_by_para_recycler_view"
+                        android:title="Read by Para"
+                        android:icon="@drawable/ic_baseline_menu_book_24"/>
+                    <item
+                        android:id="@+id/nav_read_by_surah__recycler_view"
+                        android:title="Read by Surah"
+                        android:icon="@drawable/ic_baseline_menu_book_24"/>
+                </group>
+            </menu>
+        </item>
 
     </group>
 </menu>

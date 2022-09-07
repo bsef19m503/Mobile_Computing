@@ -48,7 +48,6 @@ public class ReadByPara extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ReadByPara.this, "Clicked " + (i+1) + "th", Toast.LENGTH_SHORT).show();
                 Intent intent =  new Intent(ReadByPara.this, ParaTranslationOptions.class);
                 intent.putExtra("ParaID", i+1);
                 startActivity(intent);

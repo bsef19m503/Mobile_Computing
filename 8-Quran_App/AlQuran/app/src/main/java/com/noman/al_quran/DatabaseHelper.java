@@ -46,5 +46,37 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return AyatList;
     }
 
+    public ArrayList<SurahRecord> getAllSurah() {
+        String query = "SELECT * FROM tsurah ORDER BY SurahID";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        ArrayList<SurahRecord> surahRecords = new ArrayList<>();
+        if(cursor.moveToFirst()) {
+            do {
+                SurahRecord surahRecord = new SurahRecord(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(4),cursor.getString(3));
+                surahRecords.add(surahRecord);
+            } while(cursor.moveToNext());
+        }
+        db.close();
+        return surahRecords;
+    }
+
+    public ArrayList<ParaRecord> getSurah(int SurahID) {
+        String query = "SELECT * FROM tayah WHERE SuraID=" + SurahID + " ORDER BY AyaID";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        ArrayList<ParaRecord> AyatList = new ArrayList<>();
+        if(cursor.moveToFirst()) {
+            do {
+                ParaRecord paraRecord = new ParaRecord(cursor.getInt(10), cursor.getInt(0), cursor.getString(3), cursor.getString(4),cursor.getString(5), cursor.getString(6), cursor.getString(7));
+                AyatList.add(paraRecord);
+            } while(cursor.moveToNext());
+        }
+        db.close();
+        return AyatList;
+    }
+
+
+
 }
 

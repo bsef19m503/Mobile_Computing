@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlQuran">
         <activity
+            android:name=".ReadSurah"
+            android:exported="false" />
+        <activity
+            android:name=".SurahTranslationOptions"
+            android:exported="false" />
+        <activity
+            android:name=".ReadBySurah"
+            android:exported="false" />
+        <activity
             android:name=".ParaTranslationOptions"
             android:exported="false" />
         <activity

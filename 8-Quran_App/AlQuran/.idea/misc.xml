@@ -6,10 +6,15 @@
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_para_translation_options.xml" value="0.21" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_read_by_para.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_read_by_surah.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_read_para.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_read_surah.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/activity_surah_translation_options.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/para_aya_listview.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/para_title_listview.xml" value="0.25" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/surah_aya_listview.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/layout/surah_title_listview.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/AlQuran/app/src/main/res/menu/drawer_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
