@@ -101,6 +101,7 @@ public class QuizActivity extends AppCompatActivity {
                  findViewById(R.id.answer5)
          };
         }
+
         @SuppressLint("ResourceAsColor")
         public void gradeQuiz(View view) {
             int score = 0;
@@ -108,6 +109,7 @@ public class QuizActivity extends AppCompatActivity {
                 if(radioGroups[i].getCheckedRadioButtonId() == answers[i]) {
                     score++;
                 }
+//                one other approach
 //                if(radioGroups[i].getCheckedRadioButtonId() == -1) {
 //                    radioButton = findViewById(answers[i]);
 //                    radioButton.setBackgroundColor(R.color.purple_700);
