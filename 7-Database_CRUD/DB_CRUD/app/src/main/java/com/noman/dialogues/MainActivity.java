@@ -16,13 +16,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    ArrayList<String> studentNames = new ArrayList<String>(
-            Arrays.asList("Umar", "Ali", "Usman"));
-    ArrayList<String> studentIDs = new ArrayList<String>(
-            Arrays.asList("1", "2", "3"));
+    DatabaseHelper databaseHelper;
 
+    ArrayList<StudentModel> studentsList;
     ListView listView;
 
     Button addBtn;
@@ -34,16 +33,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        databaseHelper = new DatabaseHelper(MainActivity.this);
+        studentsList = databaseHelper.getALLStudents();
 
         listView = findViewById(R.id.recordView);
-//      ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_listview, R.id.dayView, daysList);
-        SingleRecordAdapter singleRecordAdapter = new SingleRecordAdapter(getApplicationContext(), MainActivity.this, studentNames, studentIDs);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(MainActivity.this, "list item clicked", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        SingleRecordAdapter singleRecordAdapter = new SingleRecordAdapter(getApplicationContext(), MainActivity.this, studentsList);
 
         addBtn = findViewById(R.id.addBtn);
         addBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,9 +45,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 idInput = findViewById(R.id.idInput);
                 nameInput = findViewById(R.id.nameInput);
-                studentIDs.add((idInput.getText().toString()));
-                studentNames.add((nameInput.getText().toString()));
-                singleRecordAdapter.notifyDataSetChanged();
+                if(idInput.getText().length() == 0 | nameInput.getText().length() == 0) {
+                    Toast.makeText(MainActivity.this, "ID and Name fields can't be empty.", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if(!databaseHelper.isIDAvailable(Integer.parseInt(idInput.getText().toString()))) {
+                    Toast.makeText(MainActivity.this, "ID already exists. Try another one.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+//                else {
+//                    Log.d("AAAAA", databaseHelper.isIDAvailable(Integer.parseInt(idInput.getText().toString())));
+//                }
+                Date date = new Date();
+                StudentModel studentModel = new StudentModel("", idInput.getText().toString(), nameInput.getText().toString(), "" + date.getTime());
+                databaseHelper.addStudent(studentModel);
+
+                singleRecordAdapter.refresh();
                 idInput.setText("");
                 nameInput.setText("");
             }
@@ -64,12 +70,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 listView.setAdapter(singleRecordAdapter);
-
             }
         });
-
-
-
 
     }
 }

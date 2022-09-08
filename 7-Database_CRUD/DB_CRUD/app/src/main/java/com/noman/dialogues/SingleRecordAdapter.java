@@ -19,21 +19,21 @@ import java.util.ArrayList;
 public class SingleRecordAdapter extends BaseAdapter {
     Context MainActivityContext;
     Context context;
-    ArrayList<String> studentIDs;
-    ArrayList<String> studentNames;
+    ArrayList<StudentModel> studentsList;
+    DatabaseHelper databaseHelper;
     LayoutInflater inflater;
 
-    public SingleRecordAdapter(Context applicationContext, Context MainActivityContext, ArrayList<String> studentNames, ArrayList<String> studentIDs) {
+    public SingleRecordAdapter(Context applicationContext, Context MainActivityContext, ArrayList<StudentModel> studentsList) {
         this.context = applicationContext;
-        this.studentIDs = studentIDs;
-        this.studentNames = studentNames;
+        this.studentsList = studentsList;
+        databaseHelper = new DatabaseHelper(MainActivityContext);
         inflater = (LayoutInflater.from(applicationContext));
         this.MainActivityContext = MainActivityContext;
     }
 
     @Override
     public int getCount() {
-        return studentIDs.size();
+        return studentsList.size();
     }
 
     @Override
@@ -55,12 +55,11 @@ public class SingleRecordAdapter extends BaseAdapter {
         ImageButton updateBtn = view.findViewById(R.id.updateBtn);
         ImageButton deleteBtn = view.findViewById(R.id.deleteBtn);
 
-        name.setText(studentNames.get(i));
-        id.setText(studentIDs.get(i));
+        name.setText(studentsList.get(i).getName());
+        id.setText(studentsList.get(i).getReg_no());
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Update", Toast.LENGTH_SHORT).show();
                 updateDialog(i);
 
             }
@@ -83,9 +82,8 @@ public class SingleRecordAdapter extends BaseAdapter {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                studentNames.remove(index);
-                studentIDs.remove(index);
-                notifyDataSetChanged();
+                databaseHelper.deleteStudent(Integer.parseInt(studentsList.get(index).getId()));
+                refresh();
                 dialogInterface.dismiss();
             }
         });
@@ -101,6 +99,11 @@ public class SingleRecordAdapter extends BaseAdapter {
         alertDialog.show();
     }
 
+    public void refresh() {
+        studentsList = databaseHelper.getALLStudents();
+        notifyDataSetChanged();
+    }
+
     private void updateDialog(int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivityContext);
         builder.setTitle("Update");
@@ -108,17 +111,20 @@ public class SingleRecordAdapter extends BaseAdapter {
         View view = inflater.inflate(R.layout.activity_custom_dialog, null);
         EditText idInput = view.findViewById(R.id.idInput);
         EditText nameInput = view.findViewById(R.id.nameInput);
-        idInput.setText(studentIDs.get(index));
-        nameInput.setText(studentNames.get(index));
+        idInput.setText(studentsList.get(index).getReg_no());
+        nameInput.setText(studentsList.get(index).getName());
 
         builder.setView(view);
 
         builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                studentIDs.set(index, idInput.getText().toString());
-                studentNames.set(index, nameInput.getText().toString());
-                notifyDataSetChanged();
+                StudentModel studentModel = studentsList.get(index);
+                studentModel.setName(nameInput.getText().toString());
+                studentModel.setReg_no(idInput.getText().toString());
+
+                databaseHelper.updateStudent(studentsList.get(index));
+                refresh();
                 dialogInterface.dismiss();
             }
         });

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/noman/AndroidStudioProjects/DB_CRUD/app/src/main/res/layout/activity_custom_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/DB_CRUD/app/src/main/res/layout/activity_listview.xml" value="0.25" />
+        <entry key="..\:/Users/noman/AndroidStudioProjects/DB_CRUD/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/Dialogues/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1265" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/Dialogues/app/src/main/res/drawable/ic_baseline_delete_36.xml" value="0.1265" />
         <entry key="..\:/Users/noman/AndroidStudioProjects/Dialogues/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1265" />
